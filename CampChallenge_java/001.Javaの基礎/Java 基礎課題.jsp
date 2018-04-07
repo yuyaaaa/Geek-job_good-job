@@ -1,0 +1,5 @@
+<%
+
+Out.print("hello world")
+
+%>
