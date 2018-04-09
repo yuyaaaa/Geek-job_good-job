@@ -1,0 +1,47 @@
+package org.camp.servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import java.util.Random;
+/**
+ *
+ * @author tanabeyuya
+ */
+public class sample1 extends HttpServlet {
+
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            String luckList[] ={"大吉","中吉","吉","半吉","末吉","凶","小凶","半凶","末凶","大凶"};
+            Random rand = new Random();
+            Integer index = rand.nextInt(luckList.length);
+ 
+            out.println("今日の私の運勢は"+luckList[index]+"です。");
+            
+//            /* TODO output your page here. You may use following sample code. */
+//            out.println("<!DOCTYPE html>");
+//            out.println("<html>");
+//            out.println("<head>");
+//            out.println("<title>Servlet sample1</title>");            
+//            out.println("</head>");
+//            out.println("<body>");
+//            out.println("<h1>Servlet sample1 at " + request.getContextPath() + "</h1>");
+//            out.println("</body>");
+//            out.println("</html>");
+        }
+    }
