@@ -1,0 +1,28 @@
+package sample;
+
+
+class Human{
+
+    public String name ="";
+    public int age = 0;
+
+
+    public void setHuman(String a,int b){
+        this.name = a;
+        this.age = b;
+           System.out.print(name);
+           System.out.print(age);
+
+    }
+}
+    
+    
+public class Test{
+
+public static void main(String[]args){
+    Human hito = new Human();
+    hito.age = 30;
+
+    hito.setHuman("添田",24);
+}
+}
