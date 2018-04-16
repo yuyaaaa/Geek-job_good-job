@@ -1,0 +1,43 @@
+ 【NewClassファイル】
+public class NewClass {
+
+    
+
+        public static void main(String[] args) {
+            Human hito = new Human();
+            hito.age = 40;
+
+            hito.setHuman("添田", 34);
+            
+            Teacher teacher =  new Teacher();
+              teacher.setHuman("添田", 34);
+            teacher.kougi();
+        }
+    }
+
+【Humanファイル】
+
+public class Human {
+
+        public int age = 5;
+        public String name = "田辺";
+
+   
+        public void setHuman(String a, int b) {
+            this.name = a;
+            this.age = b;
+        }
+    }
+
+【Teacherファイル】
+
+ public class Teacher extends Human {
+
+        public void kougi() {
+            String msg = "私の子供の名前は" + this.name + "です。" + "年齢は" + this.age;
+            String name = "";
+            int age = 0;
+            System.out.print(msg);
+        }
+    }
+
