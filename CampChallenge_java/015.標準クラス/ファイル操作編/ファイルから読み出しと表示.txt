@@ -1,0 +1,23 @@
+
+public class myproduce {
+    public static void main(String[] arge) {
+        
+        try{
+        File my = new File("text.txt");
+        
+        FileWriter me = new FileWriter(my);
+        me.write("私の名前は田辺裕也です");
+        
+        me.close();
+        
+        FileReader mine = new FileReader(my);
+        BufferedReader br = new BufferedReader(mine);
+    
+        System.out.print(br.readLine());
+        br.close();
+    
+    } catch(IOException e){
+    System.out.print(e.toString());
+}
+}
+}
