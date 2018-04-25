@@ -1,0 +1,8 @@
+public class moziretu {
+    public static void main(String[]args){
+        String php = "きょUはぴIえIちぴIのくみこみかんすうのがくしゅUをしてIます";
+        
+        System.out.println(php.replace("I","い").replace("U","う"));
+       
+}
+}
