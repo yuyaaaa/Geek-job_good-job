@@ -1,0 +1,10 @@
+public class moziretu {
+    public static void main(String[]args){
+        String name = "田辺裕也";
+        
+        System.out.println("文字数は");
+        System.out.println(name.length());
+        System.out.println("バイト数は");
+        System.out.print(name.getBytes().length);
+    }
+}
