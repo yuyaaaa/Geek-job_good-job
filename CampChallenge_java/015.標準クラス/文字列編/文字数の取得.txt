@@ -1,0 +1,10 @@
+public class moziretu {
+    public static void main(String[]args){
+        String mail = "yuya123456789@ezweb.ne.jp";
+        
+        System.out.println("@以降の文字数は");
+        
+//        System.out.println(mail.substring(14));
+        System.out.println(mail.substring(14).length());
+}
+}
