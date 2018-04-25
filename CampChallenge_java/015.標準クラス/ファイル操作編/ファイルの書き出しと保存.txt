@@ -1,0 +1,22 @@
+import java.io.*;
+/**
+ *
+ * @author tanabeyuya
+ */
+public class myproduce {
+    public static void main(String[] arge) {
+        
+        try{
+        File my = new File("text.txt");
+        
+        FileWriter me = new FileWriter(my);
+        me.write("私の名前は田辺裕也です");
+        
+       
+        me.close();
+    
+    } catch(IOException e){
+    System.out.print(e.toString());
+}
+}
+}
