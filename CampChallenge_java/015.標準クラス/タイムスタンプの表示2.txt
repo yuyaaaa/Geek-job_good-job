@@ -1,0 +1,35 @@
+
+import java.util.Date;
+import java.util.Calendar;
+import java.text.SimpleDateFormat;
+
+/**
+ *
+ * @author tanabeyuya
+ */
+public class zikou {
+    public static void main(String[] args){
+    Date someday = new Date(115,0,01,0,0,0);
+    Date sometime = new Date(115,11,31,23,59,59);
+//    以下は関係ないです。
+//    Date now = new Date();
+//    Calendar c = Calendar.getInstance();
+//    c.set(2016,0,1,0,0,0);
+    
+    System.out.println("2つの差は");
+    System.out.println(sometime.getTime()-someday.getTime());
+    System.out.print("秒です。");
+    
+//    以下は関係ないです。  
+//    SimpleDateFormat sdf = 
+//            new SimpleDateFormat("yyyy年MM月dd日 HH時mm分ss秒");
+//    
+//    String cString = sdf.format(someday);
+//    System.out.println(sdf.format(someday));
+//    System.out.println(sdf.format(sometime));
+//    
+//    SimpleDateFormat abc = 
+//            new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//    System.out.print(abc.format(someday));
+    }
+}
