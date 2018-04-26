@@ -1,0 +1,22 @@
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form>
+        ユーザー名:
+        <input type="text" name="user">
+        <br>
+        パスワード:
+        <input type="password" name="password">    
+        </form>
+        <p>
+            パスワードフィールドに文字を入力する場合、ブラウザが文字代わりにアスタリスクを
+            表示します。
+        </p>
+       
+    </body>
+</html>
