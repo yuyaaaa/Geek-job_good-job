@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+    <body>
+        <%
+        request.setCharacterEncoding("UTF-8");
+        
+        String a =request.getParameter("number");
+            int sosu =Integer.parseInt(a);
+//            ArrayList <Integer> data = new ArryaList<Integer>();
+            
+         
+            for(int i =2; 10 > i; i++){
+                while((sosu % i) == 0){
+                    out.println(i);
+                    sosu = sosu /i;
+                }  
+//                sosu%2 != 0 || sosu%3 != 0 || sosu%5 !=0 || sosu%7 != 0)
+            } if (sosu >10){
+                out.print("あまり"+sosu);
+            }else if (sosu <10){
+                out.print(sosu);    
+            }else{ 
+                out.print("この数は素数です");
+            }
+        %>
+    </body>
+</html>
