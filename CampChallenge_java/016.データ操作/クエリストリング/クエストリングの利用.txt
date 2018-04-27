@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form action="./newjsp1.jsp" method="get">
+        購入した商品の総数
+        <input type="text" name="total">
+        <br>
+        購入した商品の数量
+        <input type="text" name="count">
+        <br>
+        商品種別
+        <input type="text" name="type">
+        <br>
+        <input type="submit" name="submit">
+     
+        
+        </form>
+    </body>
+</html>
+
+
+【JSP】
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+    <body>
+        <%
+            request.setCharacterEncoding("UTF-8");
+            
+            String b =request.getParameter("type");
+            int sort =Integer.parseInt(b);
+            if (sort == 1) {
+                out.println("雑貨<br>");
+            }else if (sort==2){
+                out.println("生鮮食品<br>");
+            }else {
+                out.println("その他<br>");
+            }
+
+            out.println("商品の単価は300円<br>");
+            
+            String a =(request.getParameter("type"));
+            int money =Integer.parseInt(a);
+            
+//            int money =request.getParameter("total");
+            
+            if  (money < 10){
+                out.print("ポイントはありません");
+            }else if (10 <= money && money < 17){
+                out.print("ポイントは" + money*0.04);
+            }else {
+                out.print("ポイントは" + money*0.05 );
+            }
+        %>
+    </body>
+</html>
