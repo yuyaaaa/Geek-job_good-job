@@ -1,0 +1,50 @@
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+/**
+// *
+ * @author tanabeyuya
+ */
+public class javasql {
+    public static void main(String[] args){
+        Connection db_con = null;
+        PreparedStatement db_st =null;
+        ResultSet db_data = null;
+        
+        
+        try 
+        {
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            db_con = DriverManager.getConnection("jdbc:mysql://localhost:8889/GEEKJOB_db","root","root");
+            
+            db_st =db_con.prepareStatement
+            ("update profiles set name =? where profilesID = 4");
+            db_st.setString(1,"みのり");
+            db_st.execute();
+            
+            
+            db_st =db_con.prepareStatement("select * from profiles ");
+            
+            
+            
+            db_data = db_st.executeQuery();
+            while(db_data.next()){
+                System.out.println("ID:"+db_data.getString("profilesID"));
+                System.out.println("名前:"+db_data.getString("name"));
+                System.out.println("誕生日:"+db_data.getString("birthday"));
+                System.out.println("年齢:"+db_data.getString("age"));
+            }
+            
+            
+            
+            
+            
+            db_data.close();
+            db_st.close();
+            db_con.close();
+            } catch (SQLException e_sql) {
+                System.out.println("接続時にエラーが発生しました:"+e_sql.toString());
+            } catch (Exception e) {
+        }
+    }
+}
