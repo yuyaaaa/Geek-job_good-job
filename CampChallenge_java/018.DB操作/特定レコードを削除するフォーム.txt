@@ -1,0 +1,82 @@
+【HTML】
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+      <form action="./test.jsp" method="post">
+            ID
+            <input type="text"   name="profilesID">
+            <br>
+<!--            名前
+            <input type="text"   name="txtName">
+            <br>
+            誕生日
+            <input type="text"   name="birthday">
+            <br>
+            年齢
+            <input type="text"   name="age">
+            <br>-->
+            
+            <input type="submit" name="submit">
+            
+      </form>
+    </body>
+</html>
+【JSP】
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import ="java.sql.*"%>
+
+<%--<%@page import ="java.util.logging.Level"%>
+<%@page import ="java.util.logging.Logger"%>--%>
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+    <body>
+        <% 
+        Connection db_con = null;
+        PreparedStatement db_st =null;
+        ResultSet db_data = null;
+     
+        
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            db_con = DriverManager.getConnection("jdbc:mysql://localhost:8889/GEEKJOB_db","root","root");
+            
+            request.setCharacterEncoding("UtF-8");
+            
+               int a =Integer.parseInt(request.getParameter("profilesID"));
+//             String b =(request.getParameter("txtName"));
+//             String c =(request.getParameter("birthday"));
+//             int    d =Integer.parseInt(request.getParameter("age"));
+            
+            db_st =db_con.prepareStatement("delete from profiles where profilesID = ?");
+            db_st.setInt(1,a);
+            
+            db_st.execute();
+          
+                        
+            db_st =db_con.prepareStatement("select * from profiles");
+            
+            db_data = db_st.executeQuery();
+            while(db_data.next()){
+                out.println("ID:"+db_data.getInt("profilesID")+"<br>");
+                out.println("名前:"+db_data.getString("name"));
+                out.println("誕生日:"+db_data.getString("birthday"));
+                out.println("年齢:"+db_data.getInt("age"));
+            }
+            
+            db_data.close();
+            db_st.close();
+            db_con.close();
+
+
+            %>
+    </body>
+</html>
